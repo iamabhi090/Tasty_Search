@@ -17,10 +17,6 @@ import com.agarawal.tasty.search.model.TokenStructure;
 @Service
 public class QueryService {
 
-    public List<String> search(String query[]) {
-        return search(query, 20);
-    }
-
     public List<String> search(String tokens[], int K) {
         Set<Review> reviews = new TreeSet<>();
         for (String token : tokens) {

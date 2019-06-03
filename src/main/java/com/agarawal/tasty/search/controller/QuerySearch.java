@@ -41,9 +41,13 @@ public class QuerySearch {
         return search(query, 20);
     }
     
+    @GetMapping(
+            value = "/search/{K}",
+            produces = {"application/json"}
+    )
     public @ResponseBody
     List<String> search(@RequestParam("query") String query, @PathVariable int K) {
-        return service.search(query.split("\\W+"));
+        return service.search(query.split("\\W+"), K);
     }
 
 }
